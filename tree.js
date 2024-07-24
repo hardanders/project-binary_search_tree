@@ -1,3 +1,5 @@
+import { Node } from './node.js';
+
 class Tree {
     constructor(array) {
         this.array = this.sortArray(array) || null;
@@ -113,7 +115,7 @@ class Tree {
         };
 
         // Process returned array through provided function...
-        if (!(func === null)) {
+        if (func) {
             tempArray.forEach((node) => {
                 func(node);
             })
@@ -289,6 +291,7 @@ class Tree {
         // Base case
         if (key === null) return 0;
 
+        let counter = 0;
         // Get left count and add to counter
         counter += this.getNodeCount(key.left);
         // Get right count and add to counter
@@ -297,3 +300,5 @@ class Tree {
         return counter + 1;
     };
 };
+
+export { Tree };

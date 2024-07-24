@@ -1,3 +1,5 @@
+import { Tree } from './tree.js';
+
 function driver(array = randArray(), origTree = null) {
     let tree;
     if (!(origTree === null)) tree = origTree;
@@ -61,3 +63,5 @@ function randArray() {
     };
     return array;
 }
+
+driver();
